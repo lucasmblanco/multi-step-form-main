@@ -2,9 +2,11 @@ import React from 'react'
 
 export default function FormContainer({children}) {
   return (
-    <div className='grid text-marineBlue font-ubuntuMd relative 
-     m-4 bg-white rounded-xl bottom-[5.5rem] shadow-xl'>
+    <div
+      className="relative top-[-5.5rem] m-4 
+     min-w-min rounded-xl bg-white font-ubuntuMd text-marineBlue shadow-md shadow-silver"
+    >
       {children}
     </div>
-  )
+  );
 }

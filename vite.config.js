@@ -5,6 +5,6 @@ import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [, svgLoader(), react()]
-})
+  plugins: [svgLoader(), react()],
+});
 
