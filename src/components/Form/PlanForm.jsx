@@ -1,5 +1,5 @@
 import React from "react";
-import RadioButton from "./PlanFormComponents.jsx/RadioButton";
+import RadioButton from "./PlanFormComponents/RadioButton";
 import IconArcade from "./../../assets/images/IconArcade";
 import IconAdvanced from "../../assets/images/IconAdvanced";
 import IconPro from "./../../assets/images/IconPro";

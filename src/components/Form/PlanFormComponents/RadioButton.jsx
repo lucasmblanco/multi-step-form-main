@@ -12,7 +12,7 @@ export default function RadioButton({ name, svg: Svg, price }) {
       />
       <div
         className="flex cursor-pointer items-start gap-3 rounded-lg border border-solid border-lightGrey
-               p-4 peer-checked:border-marineBlue peer-checked:transition-all peer-checked:duration-500"
+               p-4 peer-checked:border-marineBlue peer-checked:transition-all peer-checked:duration-100"
       >
         <Svg />
         <div className="">
