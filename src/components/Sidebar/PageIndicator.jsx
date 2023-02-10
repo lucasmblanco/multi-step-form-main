@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from "react";
 
-export default function PageIndicator({pageNumber, pageDescription}) {
+export default function PageIndicator({ pageInformation, currentPage }) {
   return (
-    <div className='pt-7 text-sm min-h-[172px] '>
-      <p className='text-white border border-solid  rounded-full w-[2rem] h-[2rem] text-center font-ubuntuBl leading-8
-      shadow-[0_0_1px_0px_white_inset,0_0_1px_0px_white]'>
-        {pageNumber}
+    <div className="min-h-[172px] pt-7 text-sm ">
+      <p
+        className={`${
+          pageInformation.name === currentPage.name
+            ? "border-none bg-lightBlue  text-marineBlue"
+            : "bg-transparent text-white"
+        } h-[2rem] w-[2rem] rounded-full border border-solid text-center font-ubuntuBl leading-8 
+      `}
+      >
+        {pageInformation.id}
       </p>
     </div>
-  )
+  );
 }
-

@@ -1,23 +1,26 @@
-import MainContainer from "./components/MainContainer"
-import FormContainer from "./components/FormContainer"
-import Sidebar from "./components/Sidebar"
-import PersonalInfoForm from "./components/Form/PersonalInfoForm";
-import ButtonBar from "./components/ButtonBar";
-import PlanForm from "./components/Form/PlanForm";
-import AddOnsForm from "./components/Form/AddOnsForm"; 
+import React, { useState } from "react";
+import MainContainer from "./components/MainContainer";
+import FormContainer from "./components/FormContainer";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  // <PersonalInfoForm />
+  const [currentPage, setCurrentPage] = useState({
+    name: "personal-info",
+  });
+
+  const [pageRequiredInput, setPageRequiredInput] = useState({});
 
   return (
     <MainContainer>
-      <Sidebar />
-      <FormContainer>
-        <AddOnsForm />
-      </FormContainer>
-      <ButtonBar />
+      <Sidebar currentPage={currentPage} />
+      <FormContainer
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        pageRequiredInput={pageRequiredInput}
+        setPageRequiredInput={setPageRequiredInput}
+      />
     </MainContainer>
   );
 }
 
-export default App
+export default App;
