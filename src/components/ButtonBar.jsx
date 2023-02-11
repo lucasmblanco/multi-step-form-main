@@ -26,7 +26,7 @@ export default function ButtonBar({
   setShow,
 }) {
   return (
-    <div className="mt-auto grid w-full grid-cols-2 justify-between bg-white p-3 ">
+    <div className="mt-auto grid w-full grid-cols-2 justify-between bg-white p-3 desktop:py-5">
       <Button
         composition={BUTTON_ACTION.back}
         currentElement={currentPage.prev}
