@@ -38,8 +38,10 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "sidebar-mobile": "url('assets/images/bg-sidebar-mobile.svg')",
-        "sidebar-desktop": "url('assets/images/bg-sidebar-desktop.svg')",
+        "sidebar-mobile":
+          "url('../public/assets/images/bg-sidebar-mobile.svg')",
+        "sidebar-desktop":
+          "url('../public/assets/images/bg-sidebar-desktop.svg')",
       },
       animation: {
         hide: "hide 1s linear 2s forwards",
