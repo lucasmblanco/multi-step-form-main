@@ -28,6 +28,7 @@ export default function PersonalInfoForm({
                   ...element,
                   status:
                     e.target.validity.valueMissing ||
+                    e.target.validity.patternMismatch ||
                     e.target.validity.tooShort,
                 }
               : element
@@ -60,6 +61,7 @@ export default function PersonalInfoForm({
                   ...element,
                   status:
                     e.target.validity.valueMissing ||
+                    e.target.validity.patternMismatch ||
                     e.target.validity.tooShort,
                 }
               : element
@@ -175,6 +177,7 @@ export default function PersonalInfoForm({
               onChange={(e) => onHandleChange(e, "name")}
               required={true}
               minLength={2}
+              pattern="[a-zA-Z]*"
             />
           </div>
           <div>
