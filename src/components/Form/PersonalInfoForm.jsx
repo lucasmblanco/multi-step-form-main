@@ -177,7 +177,7 @@ export default function PersonalInfoForm({
               onChange={(e) => onHandleChange(e, "name")}
               required={true}
               minLength={2}
-              pattern="[a-zA-Z]*"
+              pattern="^(?! )[A-Za-z\s]*$"
             />
           </div>
           <div>
