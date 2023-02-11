@@ -49,13 +49,13 @@ export default function PlanForm({
   return (
     currentPage.name === PAGE_ID.name && (
       <fieldset className={"border-none"}>
-        <legend className="pl-2 pr-2 pt-7 font-ubuntuBl text-2xl">
+        <legend className="pl-2 pr-2 pt-7 font-ubuntuBl text-2xl desktop:text-[2rem]">
           Select your plan
         </legend>
         <p className="pl-2 pr-4 font-ubuntuRg text-base text-grey">
           You have the option of monthly or yearly billing
         </p>
-        <div className="grid gap-3 pl-2 pr-2 pt-5">
+        <div className="grid gap-3 pl-2 pr-2 pt-5 desktop:grid-cols-3">
           <RadioButton
             name={PLAN_INFORMATION.arcade.name}
             svg={IconArcade}
@@ -95,8 +95,6 @@ export default function PlanForm({
           />
         </div>
         <div className=" flex items-center justify-center gap-4 p-11 text-sm">
-          <p className="font-ubuntuBl">Monthly</p>
-
           <input
             id="billing"
             className="peer absolute cursor-pointer appearance-none"
@@ -104,6 +102,10 @@ export default function PlanForm({
             onChange={onHandleBilling}
             defaultChecked={subscription.yearly}
           />
+          <p className="font-ubuntuBl text-marineBlue peer-checked:text-grey">
+            Monthly
+          </p>
+
           <label
             htmlFor="billing"
             className="flex items-center 
@@ -114,7 +116,9 @@ export default function PlanForm({
            after:bg-white after:transition-all after:duration-100
            after:content-[''] peer-checked:after:translate-x-[0.9rem] peer-checked:after:bg-white"
           ></label>
-          <p className="font-ubuntuBl">Yearly</p>
+          <p className="font-ubuntuBl text-grey peer-checked:text-marineBlue">
+            Yearly
+          </p>
         </div>
       </fieldset>
     )

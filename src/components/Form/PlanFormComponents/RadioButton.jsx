@@ -57,16 +57,16 @@ export default function RadioButton({
       />
       <div
         className="flex cursor-pointer items-start gap-3 rounded-lg border border-solid border-lightGrey
-               p-4 peer-checked:border-marineBlue peer-checked:transition-all peer-checked:duration-100 "
+               p-4 peer-checked:border-marineBlue peer-checked:transition-all peer-checked:duration-100 desktop:min-w-fit desktop:flex-col desktop:gap-[1.2rem] desktop:p-5"
       >
         <Svg />
         <div>
-          <p className="font-ubuntuBl text-base">{name}</p>
+          <p className="font-ubuntuBl text-base desktop:pt-6">{name}</p>
           <p className="text-sm text-grey">
             +${price}/{duration}
           </p>
           {subscription.yearly && (
-            <p className="font-ubuntuMd text-xs">2 months free</p>
+            <p className="font-ubuntuMd text-xs desktop:py-1">2 months free</p>
           )}
         </div>
       </div>

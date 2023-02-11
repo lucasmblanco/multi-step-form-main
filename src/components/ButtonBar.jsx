@@ -23,9 +23,10 @@ export default function ButtonBar({
   currentPage,
   setCurrentPage,
   pageRequiredInput,
+  setShow,
 }) {
   return (
-    <div className="mt-auto grid w-full grid-cols-2 justify-between bg-white p-3">
+    <div className="mt-auto grid w-full grid-cols-2 justify-between bg-white p-3 ">
       <Button
         composition={BUTTON_ACTION.back}
         currentElement={currentPage.prev}
@@ -40,6 +41,7 @@ export default function ButtonBar({
         setCurrentPage={setCurrentPage}
         pageRequiredInput={pageRequiredInput}
         display={currentPage.next}
+        setShow={setShow}
       />
 
       <Button

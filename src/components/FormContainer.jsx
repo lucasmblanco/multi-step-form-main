@@ -23,6 +23,8 @@ export default function FormContainer({
   });
   const [addOns, setAddOns] = useState([]);
 
+  const [show, setShow] = useState(false);
+
   const FORM_PAGES = {
     "personal-info": (
       <PersonalInfoForm
@@ -35,6 +37,8 @@ export default function FormContainer({
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         setPageRequiredInput={setPageRequiredInput}
+        pageRequiredInput={pageRequiredInput}
+        show={show}
       />
     ),
     "plan-subscription": (
@@ -74,8 +78,8 @@ export default function FormContainer({
   return (
     <form action="" className="flex grow flex-col" onSubmit={handleSubmit}>
       <div
-        className="relative top-[-5.5rem] 
-     m-4 min-w-min rounded-xl bg-white font-ubuntuMd text-marineBlue shadow-md shadow-silver"
+        className="relative top-[-5.5rem] m-4
+     min-w-min rounded-lg bg-white font-ubuntuMd text-marineBlue shadow-md shadow-silver desktop:top-0 desktop:m-0 desktop:h-full desktop:min-w-full desktop:p-5 desktop:px-20 desktop:shadow-none"
       >
         {FORM_PAGES[currentPage.name]}
       </div>
@@ -83,6 +87,7 @@ export default function FormContainer({
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         pageRequiredInput={pageRequiredInput}
+        setShow={setShow}
       />
     </form>
   );

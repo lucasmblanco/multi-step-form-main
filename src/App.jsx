@@ -8,18 +8,33 @@ function App() {
     name: "personal-info",
   });
 
-  const [pageRequiredInput, setPageRequiredInput] = useState({});
+  const [pageRequiredInput, setPageRequiredInput] = useState([
+    {
+      name: "name",
+      status: true,
+    },
+    {
+      name: "email",
+      status: true,
+    },
+    {
+      name: "phone",
+      status: true,
+    },
+  ]);
 
   return (
-    <MainContainer>
-      <Sidebar currentPage={currentPage} />
-      <FormContainer
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        pageRequiredInput={pageRequiredInput}
-        setPageRequiredInput={setPageRequiredInput}
-      />
-    </MainContainer>
+    <div className="desktop:grid desktop:h-screen desktop:place-content-center desktop:place-items-center desktop:bg-trueBg ">
+      <MainContainer>
+        <Sidebar currentPage={currentPage} />
+        <FormContainer
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          pageRequiredInput={pageRequiredInput}
+          setPageRequiredInput={setPageRequiredInput}
+        />
+      </MainContainer>
+    </div>
   );
 }
 

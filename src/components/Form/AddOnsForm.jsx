@@ -45,7 +45,7 @@ export default function AddOnsForm({
   return (
     currentPage.name === PAGE_ID.name && (
       <fieldset className={"border-none"}>
-        <legend className="pl-2 pr-2 pt-7 font-ubuntuBl text-2xl">
+        <legend className="pl-2 pr-2 pt-7 font-ubuntuBl text-2xl desktop:text-[2rem]">
           Pick add-ons
         </legend>
         <p className="pl-2 pr-4 font-ubuntuRg text-base text-grey">

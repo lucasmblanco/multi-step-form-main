@@ -6,25 +6,28 @@ export default function Button({
   setCurrentPage,
   pageRequiredInput,
   display,
+  setShow = null,
 }) {
   const [visible, setVisible] = useState(Boolean(display));
 
   const Themes = {
     white:
-      "bg-white w-6/12 py-3 px-2 col-start-1 justify-self-start text-grey text-sm font-ubuntuBl rounded border-none cursor-pointer cursor-pointer",
-    dark: "col-start-2 w-6/12 cursor-pointer justify-self-end rounded border-none bg-marineBlue px-2 py-3 font-ubuntuMd text-sm text-white cursor-pointer",
+      "desktop:w-5/12 desktop:rounded-lg bg-white desktop:text-base desktop:font-ubuntuMd desktop:justify-self-center w-6/12 py-3 px-2 col-start-1 justify-self-start text-grey text-sm font-ubuntuBl rounded border-none cursor-pointer cursor-pointer hover:text-marineBlue",
+    dark: "desktop:w-5/12 desktop:rounded-lg desktop:text-base desktop:font-ubuntuMd desktop:justify-self-center col-start-2 w-6/12 cursor-pointer justify-self-end rounded border-none bg-marineBlue px-2 py-3 font-ubuntuMd text-sm text-white cursor-pointer hover:brightness-150",
     submit:
-      "bg-purplishBlue w-6/12 text-white py-3 px-2 col-start-2 justify-self-end text-sm font-ubuntuMd rounded border-none cursor-pointer cursor-pointer",
+      "desktop:w-5/12 desktop:rounded-lg desktop:text-base desktop:font-ubuntuMd desktop:justify-self-center bg-purplishBlue w-6/12 text-white py-3 px-2 col-start-2 justify-self-end text-sm font-ubuntuMd rounded border-none cursor-pointer cursor-pointer hover:brightness-150",
   };
 
   const checkRequiredInput = (requiredInput) => {
-    return Object.values(requiredInput).every((value) => !value);
+    return requiredInput.every((element) => !element.status);
   };
   const changePage = (currentElement) => {
     currentElement === "submit" || setCurrentPage({ name: currentElement });
+    setShow && setShow(false);
   };
 
   const onHandleButton = (currentElement, requiredInput) => {
+    setShow && setShow(true);
     return checkRequiredInput(requiredInput) && changePage(currentElement);
   };
 

@@ -50,10 +50,10 @@ export default function CheckBoxButton({ data, addOns, setAddOns, monthly }) {
         defaultChecked={addOns.some((addon) => addon.name === data.name)}
       />
       <div
-        className="flex cursor-pointer items-center gap-3 rounded-lg
+        className="flex cursor-pointer items-center gap-3 rounded-xl
      border border-solid border-lightGrey py-[.65rem] px-[1rem]
-      peer-checked:border-marineBlue
-     peer-checked:transition-all  peer-checked:[&_.default]:hidden peer-checked:[&_.active]:flex"
+      hover:border-select-purplish-blue
+     peer-checked:border-select-purplish-blue  peer-checked:transition-all desktop:py-[1rem] desktop:px-[1.5rem] peer-checked:[&_.default]:hidden peer-checked:[&_.active]:flex"
       >
         <div className="default flex h-5 w-fit items-center rounded border border-solid border-grey bg-white p-1">
           <IconCheckmark />
@@ -62,17 +62,19 @@ export default function CheckBoxButton({ data, addOns, setAddOns, monthly }) {
           <IconCheckmark />
         </div>
         <div className="grid w-full grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_0.7fr)] px-1 py-[0.18rem]">
-          <p className="col-span-2 font-ubuntuBl text-sm">{data.name}</p>
+          <p className="col-span-2 font-ubuntuBl text-sm desktop:text-base">
+            {data.name}
+          </p>
           {monthly ? (
-            <p className="row-span-2 self-center justify-self-end text-xs text-purplishBlue">
+            <p className="row-span-2 self-center justify-self-end text-xs text-purplishBlue desktop:font-ubuntuMd desktop:text-[.9rem]">
               +${data.monthlyPrice}/mo
             </p>
           ) : (
-            <p className="row-span-2 self-center justify-self-end text-xs text-purplishBlue">
+            <p className="row-span-2 self-center justify-self-end text-xs text-purplishBlue desktop:font-ubuntuMd desktop:text-[.9rem]">
               +${data.yearlyPrice}/yr
             </p>
           )}
-          <p className="col-span-2 font-ubuntuRg text-xs text-grey">
+          <p className="col-span-2 font-ubuntuRg text-xs text-grey desktop:text-sm">
             {data.details}
           </p>
         </div>

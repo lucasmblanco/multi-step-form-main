@@ -6,28 +6,28 @@ const PAGES_INFO = {
   "personal-info": {
     name: "personal-info",
     id: 1,
-    details: "abc",
+    details: "YOUR INFO",
   },
   "plan-form": {
     name: "plan-subscription",
     id: 2,
-    details: "abc",
+    details: "SELECT PLAN",
   },
   "add-ons": {
     name: "add-ons",
     id: 3,
-    details: "abc",
+    details: "ADD-ONS",
   },
   summary: {
     name: "summary",
     id: 4,
-    details: "abc",
+    details: "SUMMARY",
   },
 };
 
 export default function SidebarContainer({ currentPage }) {
   return (
-    <div className="flex w-full justify-center gap-4">
+    <div className="p flex w-full justify-center gap-4 desktop:flex-col desktop:gap-0 desktop:px-9 desktop:py-4">
       <PageIndicator
         pageInformation={PAGES_INFO["personal-info"]}
         currentPage={currentPage}

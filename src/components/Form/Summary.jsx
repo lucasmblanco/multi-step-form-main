@@ -24,19 +24,21 @@ export default function Summary({
   return (
     currentPage.name === PAGE_ID.name && (
       <section>
-        <h2 className="pl-5 pr-5 pt-8 font-ubuntuBl text-2xl">Finishing up</h2>
+        <h2 className="pl-5 pr-5 pt-8 font-ubuntuBl text-2xl desktop:text-[2rem]">
+          Finishing up
+        </h2>
         <p className="p px-5 py-3 font-ubuntuRg text-base text-grey">
           Double-check everything look OK before confirming.
         </p>
-        <div className="grid gap-2">
-          <div className="grid grid-cols-2  px-8 pt-7 text-sm">
-            <p className="col-span-2 font-ubuntuBl  ">
+        <div className="grid gap-2 desktop:gap-4">
+          <div className="grid grid-cols-2  px-8 pt-7 text-sm desktop:text-base">
+            <p className="col-span-2 font-ubuntuBl  desktop:font-ubuntuMd">
               {subscription.plan} ({subscription.monthly ? "Monthly" : "Yearly"}
               )
             </p>
             <button
               onClick={onHandleButton}
-              className="border-none bg-transparent text-sm text-grey decoration-lightBlack"
+              className="w-fit cursor-pointer justify-self-start border-none bg-transparent p-0 text-start text-sm text-grey decoration-lightBlack hover:underline desktop:decoration-purplishBlue desktop:hover:text-purplishBlue"
             >
               Change
             </button>
@@ -61,7 +63,7 @@ export default function Summary({
             ))}
           <div className="grid grid-cols-2 px-8 py-7 text-sm text-grey">
             <p>Total (per {subscription.monthly ? "Month" : "Year"})</p>
-            <p className="justify-self-end font-ubuntuBl text-base text-purplishBlue">
+            <p className="justify-self-end font-ubuntuBl text-base text-purplishBlue desktop:text-xl">
               $
               {subscription.price +
                 addOns.reduce((acc, curr) => (acc += curr.price), 0)}
